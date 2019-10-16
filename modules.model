@@ -1,0 +1,15 @@
+export interface Moduule{
+id: string;
+semester: string;
+title: string;
+lectureOfModule: string;
+emailOfLecture: string;
+typeOfModuleAssignments: string[];
+numberOfAssignments: number;
+dueDatesOfAssignments: string[];
+examinationDate: string;
+reminder: string;
+imageUrl: string;
+textBook: string;
+
+}
