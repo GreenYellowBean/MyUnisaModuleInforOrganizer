@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/modules">
+          </ion-back-button>
+      </ion-buttons>
+      <ion-title>My Unisa Modules</ion-title>
+    <!--<ion-title>{{ loadModule.title }}</ion-title>-->
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDeleteModule()">
+        <ion-icon name="trash" slot="icon-only">
+        </ion-icon>
+      </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-padding>
+     <!-- <ion-row>
+          <ion-col no-padding>
+              <ion-img [src]="loadModule.imageUrl"></ion-img>
+          </ion-col>
+      </ion-row>-->
+      <ion-row>
+          <ion-col>
+            <h1 text-center class="modTitle">{{ loadModule.title }}</h1>
+          </ion-col>
+        </ion-row> 
+          <ion-row>
+          <ion-col class="staLabels">
+            The Semester : 
+          </ion-col>
+          <ion-col class="resDetails">
+              {{ loadModule.semester }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="staLabels">
+              Lecturer of module :
+            </ion-col>
+            <ion-col class="resDetails">
+                {{ loadModule.lectureOfModule }}
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col class="staLabels">
+                Email of lecture :
+              </ion-col>
+              <ion-col class="resDetails">
+                  {{ loadModule.emailOfLecture }}
+                </ion-col>
+            </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-list>
+                  <ion-item lines="none" *ngFor="let ty of loadModule.typeOfModuleAssignments ">
+                    <b>Assignment types for module are : &#160; </b> {{ ty }}
+                  </ion-item>
+              </ion-list>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="staLabels">
+            Numbe of assignments :
+          </ion-col>
+          <ion-col class="resDetails">
+              {{ loadModule.numberOfAssignments }}
+            </ion-col>
+        </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-list>
+                      <ion-item lines="none" *ngFor="let du of loadModule.dueDatesOfAssignments ">
+                       <b>Due dates of assignments : &#160; </b> {{ du }}
+                      </ion-item>
+                  </ion-list>
+              </ion-col>
+          </ion-row>
+            <ion-row>
+                <ion-col class="remindMe">
+                  A reminder :
+                </ion-col>
+                <ion-col class="remindMeDetails">
+                    {{ loadModule.reminder }}
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col class="staLabels">
+                    Module textbook :
+                  </ion-col>
+                  <ion-col class="resDetails">
+                      {{ loadModule.textBook }}
+                    </ion-col>
+                </ion-row> 
+             </ion-grid>
+</ion-content>
