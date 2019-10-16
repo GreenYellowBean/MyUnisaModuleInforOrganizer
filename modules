@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="success">
+      <ion-title>My Unisa Modules</ion-title>
+    <!--<ion-title>Modules</ion-title>-->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+      <ion-item  (click)="modDetails(moduule.id)" *ngFor="let moduule of modules">
+        <ion-avatar slot="start">
+            <ion-img [src]="moduule.imageUrl">
+            </ion-img>
+        </ion-avatar>
+        <ion-label>
+          {{ moduule.title }}
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ion-content>
